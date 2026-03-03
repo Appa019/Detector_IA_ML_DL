@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+/* ============================================================
+   TEMA ESCURO — Detector de IA
+   Paleta baseada em Zinc com acentos Indigo
+   ============================================================ */
+
+@theme {
+  --color-bg-base:     #09090b;
+  --color-bg-surface:  #18181b;
+  --color-bg-elevated: #1f1f23;
+  --color-bg-overlay:  #27272a;
+
+  --color-border-subtle:  #27272a;
+  --color-border-default: #3f3f46;
+  --color-border-strong:  #52525b;
+
+  --color-text-primary:   #fafafa;
+  --color-text-secondary: #a1a1aa;
+  --color-text-tertiary:  #71717a;
+  --color-text-disabled:  #52525b;
+
+  --color-accent:       #6366f1;
+  --color-accent-hover: #818cf8;
+  --color-accent-muted: #1e1b4b;
+
+  --color-success:       #22c55e;
+  --color-success-muted: #14532d;
+  --color-warning:       #f59e0b;
+  --color-warning-muted: #78350f;
+  --color-danger:        #ef4444;
+  --color-danger-muted:  #7f1d1d;
+  --color-teal:          #14b8a6;
+  --color-teal-muted:    #134e4a;
+}
+
+/* Reset e base global */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  background-color: #09090b;
+  color: #fafafa;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* Barra de rolagem */
+::-webkit-scrollbar        { width: 6px; height: 6px; }
+::-webkit-scrollbar-track  { background: #09090b; }
+::-webkit-scrollbar-thumb  { background: #3f3f46; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #52525b; }
+
+/* Seleção de texto */
+::selection { background: #312e81; color: #e0e7ff; }
+
+/* Foco acessível */
+:focus-visible {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ============================================================
+   ANIMAÇÕES
+   ============================================================ */
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes skeleton-pulse {
+  0%, 100% { opacity: 0.35; }
+  50%       { opacity: 0.6;  }
+}
+
+@keyframes spin-smooth {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes gauge-draw {
+  from { stroke-dashoffset: 226; }
+}
+
+@keyframes bar-fill {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+@keyframes carousel-slide-in {
+  from { opacity: 0; transform: translateX(12px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.animate-fade-in-up  { animation: fade-in-up 0.35s ease-out both; }
+.animate-fade-in     { animation: fade-in 0.2s ease-out both; }
+.animate-skeleton    { animation: skeleton-pulse 1.6s ease-in-out infinite; }
+.animate-spin-smooth { animation: spin-smooth 1.2s linear infinite; }
+.animate-gauge       { animation: gauge-draw 1.4s cubic-bezier(0.4, 0, 0.2, 1) both; }
+.animate-bar-fill    {
+  transform-origin: left center;
+  animation: bar-fill 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.carousel-slide {
+  animation: carousel-slide-in 0.25s ease-out both;
+}
+
+/* Delays escalonados para listas */
+.delay-1 { animation-delay: 0.05s; }
+.delay-2 { animation-delay: 0.10s; }
+.delay-3 { animation-delay: 0.15s; }
+.delay-4 { animation-delay: 0.20s; }
+.delay-5 { animation-delay: 0.25s; }
