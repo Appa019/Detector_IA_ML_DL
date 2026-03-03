@@ -10,7 +10,7 @@ Sistema de deteccao de imagens e videos gerados por inteligencia artificial, uti
 - **Analise forense completa**: GradCAM, FFT/DCT, ELA, wavelets, noise print, SRM kernels
 - **Calibracao de confianca** via Isotonic Regression ou Temperature Scaling
 - **Extracao de metadados EXIF** com indicadores automaticos de geracao por IA
-- **Duas interfaces**: dashboard Streamlit e frontend React + API REST (FastAPI)
+- **Interface moderna**: frontend React + API REST (FastAPI)
 - **Otimizado para GPU**: modelos em FP16 com carregamento sequencial para economizar VRAM
 
 ## Arquitetura
@@ -18,7 +18,7 @@ Sistema de deteccao de imagens e videos gerados por inteligencia artificial, uti
 ```
 ┌──────────────────────────────────────────────────┐
 │                   Interface                       │
-│         Streamlit  |  React + FastAPI             │
+│              React + FastAPI                      │
 ├──────────────────────────────────────────────────┤
 │               Pipeline (core/)                    │
 │  Orquestra deteccao sequencial + analise forense  │
@@ -117,14 +117,6 @@ cd ..
 
 ## Uso
 
-### Dashboard Streamlit
-
-```bash
-streamlit run app.py
-```
-
-Acesse `http://localhost:8501` no navegador.
-
 ### API REST (FastAPI)
 
 ```bash
@@ -167,7 +159,6 @@ curl -X POST http://localhost:8000/api/analisar/imagem \
 
 ```
 ├── api.py                    # API REST (FastAPI)
-├── app.py                    # Entry point Streamlit
 ├── requirements.txt          # Dependencias Python
 ├── config/
 │   ├── settings.py           # Configuracoes globais
@@ -200,7 +191,6 @@ curl -X POST http://localhost:8000/api/analisar/imagem \
 │   ├── video_processor.py    # Extracao de frames de video
 │   └── face_detector.py      # Deteccao facial (MTCNN)
 ├── visualization/
-│   ├── dashboard.py          # Dashboard Streamlit principal
 │   ├── charts.py             # Graficos Plotly interativos
 │   ├── heatmaps.py           # Heatmaps Matplotlib
 │   └── video_timeline.py     # Timeline de analise de video
@@ -246,7 +236,7 @@ pytest tests/
 
 - **Backend**: Python, PyTorch, HuggingFace Transformers, FastAPI
 - **Frontend**: React, TypeScript, Tailwind CSS, Recharts, Vite
-- **Visualizacao**: Plotly, Matplotlib, Streamlit
+- **Visualizacao**: Plotly, Matplotlib
 - **Video**: OpenCV, facenet-pytorch (MTCNN)
 - **ML**: scikit-learn (calibracao e meta-learner)
 - **Analise de sinais**: NumPy, SciPy, PyWavelets
