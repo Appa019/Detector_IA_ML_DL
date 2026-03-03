@@ -23,7 +23,5 @@ models_cache/
 node_modules/
 frontend/dist/
 .playwright-mcp/
-CLAUDE.md
-.claude/
 *.jpg
 *.png
