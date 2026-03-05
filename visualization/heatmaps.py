@@ -3,10 +3,10 @@ Visualizacoes baseadas em Matplotlib e OpenCV para mapas de calor,
 espectro de frequencia e analise de ruido de imagens.
 
 Todas as funcoes retornam objetos matplotlib.figure.Figure, prontos
-para uso com st.pyplot(figura) no Streamlit.
+para uso via API REST ou frontend React.
 
 O backend 'Agg' e configurado aqui para evitar erros em ambientes sem
-display grafico (servidores, containers Docker, Streamlit Cloud).
+display grafico (servidores, containers Docker).
 """
 
 from __future__ import annotations
@@ -129,9 +129,8 @@ class VisualizadorMapasCalor:
     Gerador de visualizacoes de mapas de calor e analise de imagem.
 
     Utiliza Matplotlib (backend Agg) para gerar figuras estaticas
-    compatíveis com st.pyplot() no Streamlit. As figuras devem ser
-    fechadas pelo chamador apos o uso para liberar memoria
-    (plt.close(figura)).
+    compativeis com a API REST. As figuras devem ser fechadas pelo
+    chamador apos o uso para liberar memoria (plt.close(figura)).
     """
 
     def __init__(self) -> None:

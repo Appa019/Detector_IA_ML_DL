@@ -33,7 +33,7 @@ class ProcessadorImagem:
     Pipeline de preprocessamento de imagens para inferencia nos detectores.
 
     Suporta carregamento a partir de caminho de arquivo (str/Path),
-    bytes brutos ou objetos file-like (e.g., UploadFile do Streamlit/FastAPI).
+    bytes brutos ou objetos file-like (e.g., UploadFile do FastAPI).
 
     O metodo principal e preparar_para_modelo(), que executa o pipeline
     completo e retorna um tensor (1, 3, H, W) pronto para inferencia.
@@ -70,7 +70,7 @@ class ProcessadorImagem:
                 imagem = Image.open(io.BytesIO(fonte))
 
             elif hasattr(fonte, "read"):
-                # Suporta BytesIO, SpooledTemporaryFile (Streamlit/FastAPI)
+                # Suporta BytesIO, SpooledTemporaryFile (FastAPI)
                 dados = fonte.read()
                 if isinstance(dados, str):
                     dados = dados.encode("utf-8")

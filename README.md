@@ -2,6 +2,34 @@
 
 Sistema de deteccao de imagens e videos gerados por inteligencia artificial, utilizando um ensemble de modelos de Deep Learning e Machine Learning. Fornece um score de confianca (0-100%) com analise forense detalhada e visualizacoes interativas.
 
+## Download e Inicio Rapido
+
+```bash
+# 1. Clone o repositorio
+git clone https://github.com/Appa019/Detector_IA_ML_DL.git
+cd Detector_IA_ML_DL
+
+# 2. Crie o ambiente virtual e instale as dependencias Python
+python -m venv .venv
+source .venv/bin/activate        # Linux/Mac
+# .venv\Scripts\activate         # Windows
+
+pip install -r requirements.txt
+
+# 3. Baixe os modelos do HuggingFace (~3-5 GB no total)
+python utils/download_models.py
+
+# 4. Instale as dependencias do frontend
+cd frontend && npm install && cd ..
+
+# 5. Inicie o backend e o frontend (em terminais separados)
+uvicorn api:app --host 0.0.0.0 --port 8000
+# em outro terminal:
+cd frontend && npm run dev
+```
+
+Acesse `http://localhost:5173` no navegador. A API estara em `http://localhost:8000/docs`.
+
 ## Funcionalidades
 
 - **Deteccao de imagens** geradas por IA (Midjourney, Stable Diffusion, DALL-E, etc.)

@@ -2,7 +2,7 @@
 Graficos interativos Plotly para o dashboard de deteccao de conteudo gerado por IA.
 
 Todos os graficos sao retornados como go.Figure do Plotly, prontos para
-uso com st.plotly_chart() no Streamlit.
+uso via API REST ou frontend React.
 """
 
 from __future__ import annotations
@@ -93,8 +93,8 @@ class GraficosDeteccao:
     """
     Fabrica de graficos Plotly para o dashboard de deteccao de IA.
 
-    Todos os metodos retornam go.Figure prontos para uso com
-    st.plotly_chart(figura, use_container_width=True).
+    Todos os metodos retornam go.Figure prontos para uso via
+    API REST ou frontend React.
     """
 
     @staticmethod

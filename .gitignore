@@ -15,7 +15,6 @@ env/
 *.bin
 *.safetensors
 models_cache/
-.streamlit/secrets.toml
 *.mp4
 *.avi
 *.mov
@@ -23,5 +22,6 @@ models_cache/
 node_modules/
 frontend/dist/
 .playwright-mcp/
+.claude/
 *.jpg
 *.png
