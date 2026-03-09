@@ -1,4 +1,5 @@
 # Detector de Conteudo Gerado por IA
+**Link da Landing:https://detector-ia-landing.vercel.app/**
 
 Sistema de deteccao de imagens e videos gerados por inteligencia artificial, utilizando um ensemble de modelos de Deep Learning e Machine Learning. Fornece um score de confianca (0-100%) com analise forense detalhada e visualizacoes interativas.
 
